@@ -12,6 +12,7 @@ const ProjectCard = ({
   screenshots,
   liveLink,
   repoLink,
+  serverRepoLink,
   details,
 }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -37,9 +38,9 @@ const ProjectCard = ({
 
   return (
     <div className="project-card bg-white rounded-lg shadow-md overflow-hidden relative group">
-      <Slider {...settings} className="h-60">
+      <Slider {...settings} className="h-72">
         {screenshots.map((screenshot, index) => (
-          <div key={index} className="h-60">
+          <div key={index} className="h-72">
             <img
               src={screenshot}
               alt={`${title} screenshot ${index + 1}`}
@@ -70,13 +71,28 @@ const ProjectCard = ({
           >
             <FaGithub className="mr-1 sm:mr-2" /> Git Repo
           </a>
-          <div className="col-span-2">
+          <div
+            className={`col-span-2 ${
+              serverRepoLink && "grid grid-cols-2 gap-2"
+            }`}
+          >
             <button
               onClick={openModal}
               className="btn btn-primary w-full  bg-orange-500 py-0"
             >
-              <FaInfoCircle className="mr-1 sm:mr-2" /> View Details
+              {!serverRepoLink && <FaInfoCircle className="mr-1 sm:mr-2" />}
+              View Details
             </button>
+            {serverRepoLink && (
+              <a
+                href={repoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary w-full bg-orange-500 py-0"
+              >
+                <FaGithub className="mr-1 sm:mr-2" /> Git Repo
+              </a>
+            )}
           </div>
         </div>
       </div>
@@ -107,6 +123,7 @@ ProjectCard.propTypes = {
   screenshots: PropTypes.array.isRequired,
   liveLink: PropTypes.string.isRequired,
   repoLink: PropTypes.string.isRequired,
+  serverRepoLink: PropTypes.string,
   details: PropTypes.string.isRequired,
 };
 
