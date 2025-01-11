@@ -54,7 +54,7 @@ const ProjectCard = ({
           <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
           <p className="text-lg text-white mb-4">{description}</p>
         </div>
-        <div className="grid grid-cols-2 gap-2 justify-between">
+        <div className="grid grid-cols-2 gap-1 justify-between">
           <a
             href={liveLink}
             target="_blank"
@@ -69,11 +69,11 @@ const ProjectCard = ({
             rel="noopener noreferrer"
             className="btn btn-primary w-full bg-orange-500 py-0"
           >
-            <FaGithub className="mr-1 sm:mr-2" /> Git Repo
+            <FaGithub className="mr-1 sm:mr-2" /> Client git
           </a>
           <div
             className={`col-span-2 ${
-              serverRepoLink && "grid grid-cols-2 gap-2"
+              serverRepoLink && "grid grid-cols-2 gap-1"
             }`}
           >
             <button
@@ -85,12 +85,12 @@ const ProjectCard = ({
             </button>
             {serverRepoLink && (
               <a
-                href={repoLink}
+                href={serverRepoLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary w-full bg-orange-500 py-0"
               >
-                <FaGithub className="mr-1 sm:mr-2" /> Git Repo
+                <FaGithub className=" sm:mr-2" /> Server git
               </a>
             )}
           </div>
@@ -101,7 +101,28 @@ const ProjectCard = ({
         <div className="modal modal-open">
           <div className="modal-box">
             <h2 className="text-2xl font-bold mb-4">{title}</h2>
-            <p className="text-lg mb-4">{details}</p>
+            <p className="text-lg mb-4">{description}</p>
+            <div>
+              <p className="text-lg mb-2">
+                <strong>Technologies Used:</strong>{" "}
+                {details.technologiesUsed.join(", ")}
+              </p>
+              <p className="text-lg mb-2">
+                <strong>Features:</strong> {details.features.join(", ")}
+              </p>
+              <p className="text-lg mb-2">
+                <strong>Challenges Faced:</strong> {details.challengesFaced}
+              </p>
+              <p className="text-lg mb-2">
+                <strong>Learning Outcomes:</strong> {details.learningOutcomes}
+              </p>
+              <p className="text-lg mb-2">
+                <strong>Role in Team:</strong> {details.roleInTeam}
+              </p>
+              <p className="text-lg mb-2">
+                <strong>Security Measures:</strong> {details.securityMeasures}
+              </p>
+            </div>
             <div className="modal-action">
               <button
                 onClick={closeModal}
@@ -124,7 +145,14 @@ ProjectCard.propTypes = {
   liveLink: PropTypes.string.isRequired,
   repoLink: PropTypes.string.isRequired,
   serverRepoLink: PropTypes.string,
-  details: PropTypes.string.isRequired,
+  details: PropTypes.shape({
+    technologiesUsed: PropTypes.arrayOf(PropTypes.string).isRequired,
+    features: PropTypes.arrayOf(PropTypes.string).isRequired,
+    challengesFaced: PropTypes.string.isRequired,
+    learningOutcomes: PropTypes.string.isRequired,
+    roleInTeam: PropTypes.string.isRequired,
+    securityMeasures: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default ProjectCard;

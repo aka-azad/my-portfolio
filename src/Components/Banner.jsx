@@ -9,7 +9,7 @@ const Banner = () => {
     >
       <div className="flex flex-col justify-center text-white items-center sm:items-start text-center sm:text-left relative">
         <h2 className="text-4xl font-bold mb-2">
-          MERN Stack <br />
+         FrontEnd <br />
           <span className="special-text text-7xl font-charm">
             Web Developer
           </span>

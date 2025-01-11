@@ -9,36 +9,59 @@ import crowdCube3 from "../assets/crowdCube/image-(3).png";
 import clothingForAll1 from "../assets/clothingForAll/image-(1).png";
 import clothingForAll2 from "../assets/clothingForAll/image-(2).png";
 import clothingForAll3 from "../assets/clothingForAll/image-(3).png";
-
-// Sample project data (replace this with your actual project data)
 const projects = [
   {
     title: "Study Buddies",
-    description: "This platform created for students to create and submit assignments.",
-    screenshots: [studyBuddies1, studyBuddies2, studyBuddies3], // Replace with the actual paths to the images
-    liveLink: "https://study-buddies-by-ashraf.web.app/", // Replace with the actual live link
-    repoLink: "https://github.com/aka-azad/study-buddies", // Replace with the actual repo link
-    serverRepoLink: "https://github.com/aka-azad/study-buddies-server", // Replace with the actual repo link
-    details: "Detailed information about Project One.", // Add detailed information about the project
+    description:
+      "This platform created for students to create and submit assignments.",
+    screenshots: [studyBuddies1, studyBuddies2, studyBuddies3],
+    liveLink: "https://study-buddies-by-ashraf.web.app/",
+    repoLink: "https://github.com/aka-azad/study-buddies",
+    serverRepoLink: "https://github.com/aka-azad/study-buddies-server",
+    details: {
+      technologiesUsed: ["React", "Node.js", "MongoDB", "Firebase", "CSS"],
+      features: [
+        "User authentication",
+        "Real-time chat",
+        "Assignment submission and grading",
+      ],
+      challengesFaced: "Implementing real-time updates with Firebase",
+      learningOutcomes: "Improved skills in React, JWT and Firebase",
+      roleInTeam: "Full-stack developer",
+      securityMeasures: "Implemented JWT for secure authentication",
+    },
   },
   {
     title: "Crowd Cube",
-    description: "This is a Fund raising platform .",
-    screenshots: [crowdCube1, crowdCube2, crowdCube3], // Replace with the actual paths to the images
-    liveLink: "https://crowdcube-f0e0f.web.app/", // Replace with the actual live link
-    repoLink: "https://github.com/aka-azad/crowd-cube-client", // Replace with the actual repo link
-    serverRepoLink: "https://github.com/aka-azad/crowd-cube-server", // Replace with the actual repo link
-    details: "Detailed information about Project Two.", // Add detailed information about the project
+    description: "This is a Fund raising platform.",
+    screenshots: [crowdCube1, crowdCube2, crowdCube3],
+    liveLink: "https://crowdcube-f0e0f.web.app/",
+    repoLink: "https://github.com/aka-azad/crowd-cube-client",
+    serverRepoLink: "https://github.com/aka-azad/crowd-cube-server",
+    details: {
+      technologiesUsed: ["React", "Node.js", "Express", "MongoDB"],
+      features: ["User authentication", "Campaign creation and management"],
+      challengesFaced: "Integrating with Stripe API",
+      learningOutcomes: "Enhanced understanding of payment gateways",
+      roleInTeam: "Full-stack developer",
+      securityMeasures: "Implemented data encryption for secure transactions",
+    },
   },
   {
     title: "Clothing for All",
     description: "This is a cloth donation platform.",
-    screenshots: [clothingForAll1, clothingForAll2, clothingForAll3], // Replace with the actual paths to the images
-    liveLink: "https://clothingforall-b10-a9.netlify.app/", // Replace with the actual live link
-    repoLink: "https://github.com/aka-azad/clothing-for-all", // Replace with the actual repo link
-    details: "Detailed information about Project Two.", // Add detailed information about the project
+    screenshots: [clothingForAll1, clothingForAll2, clothingForAll3],
+    liveLink: "https://clothingforall-b10-a9.netlify.app/",
+    repoLink: "https://github.com/aka-azad/clothing-for-all",
+    details: {
+      technologiesUsed: ["React", "Node.js", "Express", "MongoDB"],
+      features: ["User authentication", "Donation tracking", "User profiles"],
+      challengesFaced: "Ensuring secure user data handling",
+      learningOutcomes: "Enhanced skills in building secure applications",
+      roleInTeam: "Full-stack developer",
+      securityMeasures: "Implemented secure authentication and data encryption",
+    },
   },
-  // Add more projects as needed
 ];
 
 const Projects = () => {
@@ -52,7 +75,7 @@ const Projects = () => {
         <h2 className="text-3xl text-white font-bold text-center mb-6">
           My Projects
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((project, index) => (
             <ProjectCard
               key={index}
