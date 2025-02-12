@@ -8,7 +8,7 @@ import Projects from "./Components/Projects";
 
 function App() {
   return (
-    <div className="font-poppins max-w-screen-lg mx-auto">
+    <div className="font-poppins bg-gradient-to-r from-[#020024] via-[#252574] to-[#00d4ff] mx-auto">
       <Navbar />
       <Banner />
       <AboutMe />

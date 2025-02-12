@@ -9,7 +9,41 @@ import crowdCube3 from "../assets/crowdCube/image-(3).png";
 import clothingForAll1 from "../assets/clothingForAll/image-(1).png";
 import clothingForAll2 from "../assets/clothingForAll/image-(2).png";
 import clothingForAll3 from "../assets/clothingForAll/image-(3).png";
+import skillSpace1 from "../assets/skillSpace/img1.png";
+import skillSpace2 from "../assets/skillSpace/img2.png";
+import skillSpace3 from "../assets/skillSpace/img3.png";
+import skillSpace4 from "../assets/skillSpace/img4.png";
 const projects = [
+  {
+    title: "Skill Space",
+    description:
+      "This is an education platform for students to gain skill-based knowledge",
+    screenshots: [skillSpace1, skillSpace2, skillSpace3, skillSpace4],
+    liveLink: "https://skill-space-by-ashraf.web.app/",
+    repoLink: "https://github.com/aka-azad/skill-space-client",
+    serverRepoLink: "https://github.com/aka-azad/skill-space-server",
+    details: {
+      technologiesUsed: [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Firebase",
+        "CSS",
+        "JWT",
+        "Stripe",
+      ],
+      features: [
+        "User authentication",
+        "Admin Dashboard",
+        "Stripe payment system",
+        "Assignment submission and grading",
+      ],
+      challengesFaced: "Implementing real-time updates with Firebase",
+      learningOutcomes: "Improved skills in React, JWT and Firebase",
+      roleInTeam: "Full-stack developer",
+      securityMeasures: "Implemented JWT for secure authentication",
+    },
+  },
   {
     title: "Study Buddies",
     description:
@@ -20,11 +54,7 @@ const projects = [
     serverRepoLink: "https://github.com/aka-azad/study-buddies-server",
     details: {
       technologiesUsed: ["React", "Node.js", "MongoDB", "Firebase", "CSS"],
-      features: [
-        "User authentication",
-        "Real-time chat",
-        "Assignment submission and grading",
-      ],
+      features: ["User authentication", "Assignment submission and grading"],
       challengesFaced: "Implementing real-time updates with Firebase",
       learningOutcomes: "Improved skills in React, JWT and Firebase",
       roleInTeam: "Full-stack developer",
@@ -68,14 +98,14 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="projects-section bg-cover bg-center bg-fixed rounded-lg mt-4 "
+      className="projects-section max-w-screen-lg mx-auto bg-cover bg-center bg-fixed rounded-lg mt-4 "
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="bg-gradient-to-r from-[#8a878777] via-[#b62c2c48] to-[#573bca3d] bg-opacity-50  p-10 rounded-lg">
         <h2 className="text-3xl text-white font-bold text-center mb-6">
           My Projects
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2  gap-4">
           {projects.map((project, index) => (
             <ProjectCard
               key={index}

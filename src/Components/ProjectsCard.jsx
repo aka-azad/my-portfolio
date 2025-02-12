@@ -37,7 +37,7 @@ const ProjectCard = ({
   };
 
   return (
-    <div className="project-card bg-white rounded-lg shadow-md overflow-hidden relative group">
+    <div className="project-card  bg-white rounded-lg shadow-md overflow-hidden relative group">
       <Slider {...settings} className="h-72">
         {screenshots.map((screenshot, index) => (
           <div key={index} className="h-72">

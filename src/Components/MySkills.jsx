@@ -28,6 +28,7 @@ const MySkills = () => {
     dots: true,
     infinite: true,
     speed: 500,
+
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
@@ -58,8 +59,8 @@ const MySkills = () => {
   };
 
   return (
-    <div id="skills" className="skill-section p-10 text-primary">
-      <h2 className="text-3xl font-bold text-center mb-6">My Skills</h2>
+    <div id="skills" className="skill-section max-w-screen-lg mx-auto p-10 text-primary">
+      <h2 className="text-3xl font-bold text-[#E07224] text-center mb-6">My Skills</h2>
       <Slider {...settings}>
         {skills.map((skill, index) => (
           <div
